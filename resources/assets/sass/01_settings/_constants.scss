@@ -1,0 +1,65 @@
+@use '../02_tools/functions/sizes' as *;
+
+// Genereal
+$scale-ratio: 0.8;
+$max-site-width: 1680px;
+$trns-base: all 0.2s ease-in-out;
+$fa-primary-color: var(--black);
+$fa-secondary-color: var(--white);
+
+// Row sizes
+$row-standard: rowsize(20, 160);
+
+// Fonts
+$ff-base: 'figtree', sans-serif;
+$ff-alt: 'figtree', sans-serif;
+$ff-fa: 'Font Awesome 6 Pro', 'Font Awesome 6 Brands';
+
+// Fontsize
+$fs-base: fs(20);
+$fs-h1: fs(65);
+$fs-h2: fs(42);
+$fs-h3: fs(34);
+$fs-h4: fs(27);
+$fs-h5: fs(22);
+$fs-h6: fs(16);
+$fs-large: fs(22);
+$fs-small: fs(16);
+$fs-tiny: fs(14);
+
+// Font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-heavy: 800;
+$fw-black: 900;
+
+// Line height
+$lh-heading: 1.15;
+$lh-paragraph: 1.35;
+$lh-base: $lh-paragraph;
+
+// Sizes
+$size-40: size(40);
+$size-30: size(30);
+$size-25: size(25);
+$size-20: size(20);
+$size-15: size(15);
+$size-10: size(10);
+$size-5: size(5);
+
+// Paddings
+$section-padding: size(34);
+$row-padding: size(32);
+$gutter: size(5, 32);
+
+// Breakpoints
+$grid-breakpoints: (
+	xs: 350px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);

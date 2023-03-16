@@ -1,0 +1,40 @@
+@use '../00_cores/' as *;
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.gc-product-info-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	gap: size(20) size(32);
+
+	.gc-product-price {
+		display: inline-block;
+		height: 100%;
+		padding: size(10);
+		font-size: $paragraph-sm-highlight-font-size;
+		font-weight: $paragraph-sm-highlight-font-weight;
+		color: var(--text-negative-level-1-color);
+		letter-spacing: $paragraph-sm-highlight-letter-spacing;
+		background: var(--background-negative-level-1-color);
+	}
+
+	.gc-product-country {
+		display: flex;
+		align-items: center;
+		font-size: $link-l-sm-font-size;
+		font-weight: $link-l-sm-font-weight;
+		color: var(--text-main-primary-accent-color);
+		text-decoration: underline;
+
+		img {
+			display: inline-block;
+			width: size(32);
+			height: auto;
+			margin-right: size(12);
+		}
+	}
+
+	& + .gc-product-info-description {
+		margin-top: size(12);
+	}
+}

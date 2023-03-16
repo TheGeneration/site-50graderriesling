@@ -1,0 +1,37 @@
+@use '../../01_settings/' as *;
+@use '../../02_tools/' as *;
+
+.cookie-table {
+	overflow: auto;
+
+	& + .cookie-table {
+		margin-top: $section-padding;
+	}
+
+	> p {
+		padding-bottom: 0;
+	}
+
+	table {
+		min-width: 550px;
+		width: 100%;
+		margin-top: $size-15;
+		border-collapse: collapse;
+		border: 1px solid #ccc;
+
+		:is(th, td) {
+			padding: $size-10;
+			border: 1px solid #ccc;
+		}
+
+		tr:first-child td {
+			font-size: $fs-h6;
+			text-align: left;
+			background: #f6f6f7;
+		}
+
+		p {
+			padding: 0;
+		}
+	}
+}

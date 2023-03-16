@@ -1,0 +1,324 @@
+@use '../00_cores/' as *;
+@use './01_settings/' as *;
+@use './02_tools/' as *;
+@use '../05_helpers/spinners' as *;
+@use '../03_general/buttons' as *;
+
+.gform_wrapper {
+	position: relative;
+
+	form {
+		position: relative;
+		transition: $trns-base;
+	}
+}
+
+.gform_required_legend {
+	display: none;
+}
+
+.gform_fields {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0;
+}
+
+.gfield {
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: size(15, 25);
+	list-style-type: none;
+
+	&:last-child {
+		margin-bottom: size(16);
+	}
+}
+
+fieldset {
+	padding: 0;
+	margin-right: 0;
+	margin-left: 0;
+	border: none;
+}
+
+:is(legend, label) {
+	display: block;
+	margin-bottom: size(8);
+	font-size: $heading-h6-font-size;
+	font-weight: $heading-h6-font-weight;
+	color: var(--text-main-level-1-color);
+
+	.hidden_label & {
+		display: none;
+	}
+
+	a {
+		font-weight: $fw-bold;
+	}
+}
+
+.ginput_container {
+	position: relative;
+}
+
+.ginput_container_consent {
+	padding: size(12) size(15);
+	background: var(--background-main-level-2-color);
+
+	> label {
+		margin-bottom: 0;
+	}
+}
+
+input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+textarea,
+select {
+	display: block;
+	width: 100%;
+	padding: size(13);
+	margin: 0;
+	font-size: $paragraph-sm-font-size;
+	line-height: 1;
+	color: var(--text-main-level-1-color);
+	background: var(--control-main-background-color);
+	border: 2px solid var(--control-main-border-default-color);
+	border-radius: 2px;
+	box-shadow: none;
+	transition: $trns-base;
+	-webkit-appearance: none;
+
+	&::placeholder {
+		color: var(--text-main-level-4-color);
+	}
+
+	&:focus {
+		border-color: var(--control-main-active-color);
+		outline: none;
+	}
+}
+
+textarea {
+	height: size(96);
+	min-height: size(96);
+	resize: none;
+}
+
+.ginput_container_select {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: $size-15;
+		font-family: $ff-fa;
+		font-size: $fs-small;
+		color: var(--black);
+		pointer-events: none;
+		content: '\f107';
+		transform: translateY(-50%);
+	}
+}
+
+/* clears the ‘X’ from Chrome */
+input[type='search'] {
+	&:-webkit-search-decoration,
+	&:-webkit-search-cancel-button,
+	&:-webkit-search-results-button,
+	&:-webkit-search-results-decoration {
+		display: none;
+	}
+}
+
+:is(.gfield_radio, .gfield_checkbox) :is(li, div) {
+	position: relative;
+	margin-bottom: $size-5;
+	list-style: none;
+}
+
+input {
+	&[type='checkbox'] {
+		& + label::before {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: $ff-fa;
+			font-size: 0;
+			font-weight: $fw-regular;
+			color: var(--text-negative-level-1-color);
+			text-align: center;
+			content: '\f00c';
+			background: var(--control-main-background-color);
+			border-radius: 2px;
+			transform-origin: center;
+		}
+
+		&:checked + label::before {
+			font-size: fs($icon-i-tn-solid-font-size);
+			background: var(--control-main-active-color);
+			border-color: var(--control-main-active-color);
+		}
+	}
+
+	&[type='radio'] {
+		& + label::before {
+			content: '';
+			border-radius: 100%;
+		}
+
+		&:checked + label::before {
+			border-color: var(--black);
+			border-width: 5px;
+		}
+	}
+
+	&[type='submit'] {
+		@extend %btn;
+	}
+
+	&:is([type='checkbox'], [type='radio']) {
+		$size: size(18);
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+
+		& + label {
+			position: relative;
+			display: block;
+			padding-left: size(30);
+			margin-left: 0;
+			font-size: fs($paragraph-sm-font-size);
+			font-weight: $paragraph-sm-font-weight;
+			color: var(--text-main-level-3-color);
+
+			&::before {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				box-sizing: border-box;
+				width: $size;
+				height: $size;
+				padding: 0;
+				line-height: 1;
+				cursor: pointer;
+				background: var(--control-main-background-color);
+				border: 2px solid var(--control-main-border-default-color);
+				border-radius: 2px;
+				transition: $trns-base;
+			}
+
+			> a {
+				font-weight: $link-l-tn-font-weight;
+				color: inherit;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		&:focus + label::before {
+			border-color: var(--action-primary-main-hover-color);
+		}
+	}
+}
+
+@include bp-min(md) {
+	.input-half {
+		width: calc(50% - #{$gutter});
+	}
+}
+
+button[type='submit'] {
+	@extend %btn;
+
+	justify-content: center;
+	width: 100%;
+	border-radius: 0;
+
+	&::after {
+		content: '\f08e';
+	}
+}
+
+.gfield_visibility_hidden {
+	display: none !important;
+}
+
+/**
+    [ === Form submitting ===
+**/
+
+.gform_ajax_spinner {
+	display: none;
+}
+
+.submitting {
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		font-family: $ff-fa;
+		font-size: $size-40;
+		color: var(--black);
+		content: '\f110';
+		transform: translate(-50%, -50%);
+		transform-origin: center;
+		animation: spinn-loader 0.5s linear infinite;
+	}
+
+	form {
+		opacity: 0.4;
+	}
+}
+
+/**
+    === End Form submitting === ]
+**/
+
+/**
+    [ === Validation ===
+**/
+
+.gform_validation_errors,
+.validation_message {
+	font-size: fs($paragraph-tn-font-size);
+	color: var(--error-main-text-color);
+	border: none;
+}
+
+.gform_submission_error {
+	margin-bottom: size(20);
+	font-size: $fs-h5;
+	color: var(--error-main-text-color);
+}
+
+.gform_confirmation_message {
+	font-size: $fs-large;
+	font-weight: $fw-bold;
+}
+
+.gfield_error {
+	.validation_message {
+		padding-top: $size-10;
+	}
+
+	input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+	textarea,
+	select {
+		margin-bottom: 0;
+		border-color: var(--error-main-text-color);
+	}
+
+	&:is(label, .gfield_radio, .gfield_checkbox) {
+		color: var(--error-main-text-color);
+	}
+}
+
+/**
+    === End Validation === ]
+**/

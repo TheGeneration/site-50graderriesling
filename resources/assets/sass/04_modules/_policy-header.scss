@@ -1,0 +1,11 @@
+@use '../00_cores/' as *;
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.policy-header {
+	background: var(--background-main-level-3-color);
+
+	#main &.section {
+		padding-top: size(100, 172);
+	}
+}

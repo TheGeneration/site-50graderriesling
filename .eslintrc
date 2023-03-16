@@ -1,0 +1,14 @@
+{
+	"env": {
+		"browser": true,
+		"es2020": true
+	},
+	"extends": ["google", "prettier"],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"camelcase": ["warn", { "ignoreGlobals": true }],
+		"no-unused-vars": "warn"
+	}
+}

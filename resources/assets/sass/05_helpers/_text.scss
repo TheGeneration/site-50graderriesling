@@ -1,0 +1,22 @@
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+// General
+
+.text {
+	&-center {
+		text-align: center;
+	}
+
+	&-right {
+		text-align: right;
+
+		@include bp-max(sm) {
+			text-align: initial;
+		}
+	}
+
+	&-light :is(h1, h2, h3, h4, h5, h6, p, a, li) {
+		color: var(--white);
+	}
+}

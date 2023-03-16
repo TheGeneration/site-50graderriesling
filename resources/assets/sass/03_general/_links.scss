@@ -1,0 +1,32 @@
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+a {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: none;
+	transition: $trns-base;
+
+	&:not([class]) {
+		text-decoration: underline;
+
+		&:hover {
+			-webkit-text-decoration-color: var(--transparent);
+			text-decoration-color: var(--transparent);
+		}
+	}
+}
+
+.has-overlay-link {
+	position: relative;
+
+	.overlay-link {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

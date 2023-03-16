@@ -1,0 +1,24 @@
+@use '../00_cores/' as *;
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+#age-validation {
+	.popup-wrapper {
+		max-width: size(352);
+
+		.popup-inner {
+			padding: size(24);
+
+			.module-image {
+				display: block;
+				width: 100%;
+				max-width: size(126);
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.popup-close {
+		display: none;
+	}
+}

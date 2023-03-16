@@ -1,0 +1,37 @@
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.section {
+	padding: $section-padding 0;
+
+	&.align {
+		&-end,
+		&-between,
+		&-center {
+			display: flex;
+			flex-flow: column;
+		}
+
+		&-end {
+			justify-content: flex-end;
+		}
+
+		&-between {
+			justify-content: space-between;
+		}
+
+		&-center {
+			justify-content: center;
+		}
+	}
+}
+
+.row {
+	&-fw {
+		width: var(--box-width);
+	}
+}
+
+[class^='module-'] + [class^='module-'] {
+	margin-top: $row-padding;
+}

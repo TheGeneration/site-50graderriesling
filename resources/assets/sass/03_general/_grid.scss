@@ -1,0 +1,50 @@
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.grid {
+	$grid-columns: 12;
+
+	@for $col from 1 through $grid-columns {
+		&-#{$col} {
+			:is(.col, .listing-items-wrapper) {
+				display: grid;
+				grid-template-columns: repeat(#{$col}, 1fr);
+				gap: $size-30 calc(#{$gutter} * 2);
+
+				[class^='module-'] {
+					margin-top: 0;
+				}
+			}
+		}
+
+		@include bp-max(lg) {
+			@if $col >= 4 {
+				&-#{$col} {
+					:is(.col, .listing-items-wrapper) {
+						grid-template-columns: repeat(3, 1fr);
+					}
+				}
+			}
+		}
+
+		@include bp-max(md) {
+			@if $col >= 3 {
+				&-#{$col} {
+					:is(.col, .listing-items-wrapper) {
+						grid-template-columns: repeat(2, 1fr);
+					}
+				}
+			}
+		}
+
+		@include bp-max(sm) {
+			@if $col >= 2 {
+				&-#{$col} {
+					:is(.col, .listing-items-wrapper) {
+						grid-template-columns: repeat(1, 1fr);
+					}
+				}
+			}
+		}
+	}
+}

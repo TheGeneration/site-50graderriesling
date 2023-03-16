@@ -1,0 +1,30 @@
+@use './01_settings/' as *;
+@use './00_cores/theme-colors' as *;
+
+$main-theme: map-get($theme-colors, 'main');
+$negative-theme: map-get($theme-colors, 'negative');
+
+:root {
+	// General
+	--box-width: min(100vw, #{$max-site-width});
+	--scale-ratio: #{$scale-ratio};
+	--fa-primary-color: #{$fa-primary-color};
+	--fa-secondary-color: #{$fa-secondary-color};
+	--gutter: #{$gutter};
+	--row-standard: #{$row-standard};
+	--row-padding: #{$row-padding};
+}
+
+html:not(.negative-theme-scheme):root {
+	// default colors
+	@each $color, $value in $main-theme {
+		--#{$color}: #{$value};
+	}
+}
+
+.negative-theme-scheme:root {
+	// negative colors
+	@each $color, $value in $negative-theme {
+		--#{$color}: #{$value};
+	}
+}

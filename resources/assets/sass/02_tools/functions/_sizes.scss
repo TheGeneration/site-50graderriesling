@@ -1,0 +1,125 @@
+@use 'sass:math';
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return math.div($number, $number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@function pxunit($variable) {
+	@return strip-unit($variable) + px;
+}
+
+@function emunit($variable) {
+	@return strip-unit($variable) + em;
+}
+
+// Size function
+@function size($mobile-size: 0, $desktop-size: 0) {
+	// If negative value
+	@if $mobile-size < 0 and $desktop-size < 0 {
+		$mobile-size: math.abs($mobile-size);
+		$desktop-size: math.abs($desktop-size);
+
+		@return calc(
+			0px -
+				(
+					#{$mobile-size}px + (#{$desktop-size} - #{$mobile-size}) *
+						(#{var(--box-width)} - 320px) / (1440 - 320)
+				)
+		);
+	}
+
+	// If negative value and only one argument auto scale down to --scale-ratio variable in mobile
+	@if $mobile-size < 0 and $desktop-size == 0 {
+		$desktop-size: math.abs($mobile-size);
+		$mobile-size: math.abs($mobile-size);
+
+		@return calc(
+			0px -
+				(
+					(#{$mobile-size}px * #{var(--scale-ratio)}) +
+						(#{$desktop-size} - (#{$mobile-size} * #{var(--scale-ratio)})) *
+						(#{var(--box-width)} - 320px) / (1440 - 320)
+				)
+		);
+	}
+
+	// If only one argument auto scale down to --scale-ratio variable in mobile
+	@if $mobile-size > 0 and $desktop-size == 0 {
+		$desktop-size: $mobile-size;
+		$mobile-size: $mobile-size;
+
+		@return calc(
+			(#{$mobile-size}px * #{var(--scale-ratio)}) +
+				(#{$desktop-size} - (#{$mobile-size} * #{var(--scale-ratio)})) *
+				(var(--box-width) - 320px) / (1440 - 320)
+		);
+	}
+
+	@return calc(
+		#{$mobile-size}px + (#{$desktop-size} - #{$mobile-size}) *
+			(var(--box-width) - 320px) / (1440 - 320)
+	);
+}
+
+// Set row sizes
+@function rowsize($min, $desktop) {
+	@return calc(
+		(
+			var(--box-width) -
+				(
+					(
+							#{$min}px + (#{$desktop} - #{$min}) * (var(--box-width) - 320px) /
+								(1440 - 320)
+						) * 2
+				)
+		)
+	);
+}
+
+// Calculates font-size
+@function fs($value) {
+	$val: strip-unit($value);
+	$px-num: calc(#{$val}px * #{var(--scale-ratio)});
+	$num: calc(#{$val} * #{var(--scale-ratio)});
+
+	@if $val < 16 {
+		@return max(
+			calc(#{$val}px),
+			calc(
+				#{$px-num} + (#{$val} - #{$num}) * (var(--box-width) - 320px) / (1440 -
+							320)
+			)
+		);
+	} @else {
+		@return max(
+			16px,
+			calc(
+				#{$px-num} + (#{$val} - #{$num}) * (var(--box-width) - 320px) / (1440 -
+							320)
+			)
+		);
+	}
+}
+
+@function spacing($mobile-size: 0, $desktop-size: 0) {
+	// If only one argument auto scale down to --scale-ratio variable in mobile
+	@if $mobile-size > 0 and $desktop-size == 0 {
+		$desktop-size: strip-unit($mobile-size);
+		$mobile-size: strip-unit($mobile-size);
+
+		@return calc(
+			(#{$mobile-size}px * #{var(--scale-ratio)}) +
+				(#{$desktop-size} - (#{$mobile-size} * #{var(--scale-ratio)})) *
+				(var(--box-width) - 320px) / (1440 - 320)
+		);
+	}
+
+	@return calc(
+		#{$mobile-size}px + (#{$desktop-size} - #{$mobile-size}) *
+			(var(--box-width) - 320px) / (1440 - 320)
+	);
+}

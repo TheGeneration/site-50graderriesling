@@ -1,0 +1,106 @@
+@use '../00_cores/' as *;
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.module-gc-review {
+	display: flex;
+	flex-direction: column;
+	gap: size(20);
+
+	.gc-review-stats-wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		gap: size(20);
+		align-items: center;
+		justify-content: space-between;
+		padding: size(16) size(27);
+		background: var(--background-main-level-2-color);
+
+		.gc-review-stars {
+			display: flex;
+			gap: size(12);
+
+			i {
+				font-size: fs($icon-i-h3-solid-font-size);
+				color: var(--text-main-level-3-color);
+			}
+		}
+
+		.gc-review-desc {
+			font-size: fs($paragraph-tn-highlight-font-size);
+			font-weight: $paragraph-tn-highlight-font-weight;
+			color: var(--text-main-level-1-color);
+
+			div + & {
+				margin-top: size(16);
+			}
+		}
+
+		.gc-review-btn .btn {
+			border-radius: 0;
+		}
+
+		.gc-review-form-wrapper {
+			display: none;
+			width: 100%;
+
+			.gc-review-form-inner {
+				padding-top: size(16);
+
+				.gc-review-form-title {
+					margin-bottom: size(32);
+				}
+
+				@include bp-min(md) {
+					width: 48.1%;
+				}
+			}
+		}
+	}
+
+	.gc-review-single-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: size(12);
+
+		.gc-review-card {
+			display: flex;
+			flex-direction: column;
+			gap: size(12);
+			width: 100%;
+			padding: size(16);
+			margin-top: 0;
+			border: 1px solid var(--background-main-level-3-color);
+		}
+
+		.gc-review-name {
+			font-size: fs($paragraph-sm-highlight-font-size);
+			font-weight: $paragraph-sm-highlight-font-weight;
+		}
+
+		.gc-review-content p {
+			font-size: fs($paragraph-sm-font-size);
+		}
+
+		.gc-review-stars {
+			display: flex;
+			gap: size(8);
+
+			i {
+				font-size: fs($icon-i-sm-solid-font-size);
+				color: var(--text-main-level-3-color);
+			}
+		}
+
+		.gc-review-date {
+			margin-top: size(6);
+			font-size: fs($paragraph-tn-highlight-font-size);
+			font-weight: $paragraph-tn-highlight-font-weight;
+			color: var(--text-main-level-2-color);
+		}
+
+		@include bp-max(md) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}

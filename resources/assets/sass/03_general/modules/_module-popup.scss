@@ -1,0 +1,44 @@
+@use '../../00_cores/' as *;
+@use '../../01_settings/' as *;
+@use '../../02_tools/' as *;
+@use '../buttons' as *;
+
+.open-popup {
+	@extend %btn;
+}
+
+.popup {
+	background-color: rgba(#0f0e0b, 0.5);
+
+	.popup-wrapper {
+		max-width: rowsize(5, 256);
+
+		.popup-close {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: size(44);
+			height: size(44);
+			margin-bottom: 0;
+			font-size: 0;
+			background: var(--background-negative-level-1-color);
+			transition: background 0.2s ease-in-out;
+
+			&::after {
+				font-family: $icon-i-sm-solid-font-family;
+				font-size: fs($icon-i-sm-solid-font-size);
+				font-weight: $icon-i-sm-solid-font-weight;
+				content: '\f00d';
+			}
+
+			&:hover {
+				background: var(--background-negative-level-2-color);
+			}
+		}
+
+		.popup-inner {
+			padding: size(40);
+			background-color: var(--background-main-level-1-color);
+		}
+	}
+}

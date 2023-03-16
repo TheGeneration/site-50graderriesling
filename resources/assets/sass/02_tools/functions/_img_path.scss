@@ -1,0 +1,5 @@
+// Gives relative path to /assets/img folder
+
+@function img-path($name, $img-url: '../../img/') {
+	@return $img-url + $name;
+}

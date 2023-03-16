@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Generation Theme Child\n"
+"POT-Creation-Date: 2021-10-11 11:25+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: languages\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: console\n"
+"X-Poedit-SearchPathExcluded-3: vendor\n"
+"X-Poedit-SearchPathExcluded-4: resources\n"
+"X-Poedit-SearchPathExcluded-5: tests\n"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:17
+msgid "Dummy Child module"
+msgstr "Dummy Child-modul"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:18
+msgid "Dummy module description"
+msgstr "Dummymodulsbeskrivning"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:41
+msgid "Number + unit"
+msgstr "Nummer + enhet"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:49
+msgid "Conditional field"
+msgstr "Villkorsstyrt fält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:60
+msgid "Field section"
+msgstr "Fältsektion"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:64
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:181
+msgid "Toggle field"
+msgstr "Toggle-fält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:68
+msgid "Text field"
+msgstr "Textfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:74
+msgid "Link"
+msgstr "Länk"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:78
+msgid "Text"
+msgstr "Text"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:84
+msgid "Target blank"
+msgstr "Öppna i ny flik"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:92
+msgid "Link field"
+msgstr "Länkfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:96
+msgid "Number field"
+msgstr "Nummerfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:103
+msgid "Editor field"
+msgstr "Redigeringsfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:108
+msgid "Code field"
+msgstr "Kodfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:112
+msgid "Color field"
+msgstr "Färgfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:116
+msgid "Date field"
+msgstr "Datumfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:120
+msgid "Time field"
+msgstr "Tidsfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:124
+msgid "Image with ID"
+msgstr "Bild med ID"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:130
+msgid "Image with URL"
+msgstr "Bild med URL"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:136
+msgid "Video with ID"
+msgstr "Video med ID"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:142
+msgid "Video with URL"
+msgstr "Video med URL"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:148
+msgid "URL field"
+msgstr "URL-fält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:152
+msgid "Phone field"
+msgstr "Telefonfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:156
+msgid "E-mail field"
+msgstr "E-postfält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:160
+msgid "Custom admin label example"
+msgstr "Exempel egen adminlabel"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:165
+msgid "Select field"
+msgstr "Select-fält"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:168
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:176
+msgid "First one"
+msgstr "Första"
+
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:169
+#: inc/modules/class-generation-theme-child-module-dummy-child.php:177
+msgid "Second one"
+msgstr "Andra"

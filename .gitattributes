@@ -1,0 +1,10 @@
+/resources export-ignore
+/gulpfile.js export-ignore
+/README.md export-ignore
+/CHANGELOG.md export-ignore
+/package.json export-ignore
+/phpcs.xml export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/.nvmrc export-ignore
+/yarn.lock export-ignore

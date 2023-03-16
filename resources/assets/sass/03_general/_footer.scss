@@ -1,0 +1,32 @@
+@use './01_settings/' as *;
+@use './02_tools/' as *;
+
+#footer {
+	background: var(--background-negative-level-1-color);
+
+	.section {
+		padding: size(60);
+	}
+
+	.row {
+		padding: 0;
+	}
+
+	.footer-logo {
+		width: 100%;
+		max-width: size(126);
+	}
+
+	p {
+		color: var(--text-negative-level-2-color);
+
+		> a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

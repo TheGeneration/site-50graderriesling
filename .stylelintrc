@@ -1,0 +1,111 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-config-recess-order",
+		"stylelint-config-prettier-scss"
+	],
+	"plugins": [
+		"stylelint-order",
+		"stylelint-declaration-block-no-ignored-properties"
+	],
+	"rules": {
+		"property-no-vendor-prefix": null,
+		"value-no-vendor-prefix": null,
+		"at-rule-no-vendor-prefix": null,
+		"selector-no-vendor-prefix": null,
+		"selector-class-pattern": null,
+		"no-descending-specificity": [true, { "severity": "warning" }],
+		"block-no-empty": [true, { "severity": "warning" }],
+		"max-nesting-depth": [
+			3,
+			{
+				"ignore": ["pseudo-classes"],
+				"ignoreAtRules": ["each", "media", "supports", "include"]
+			}
+		],
+		"plugin/declaration-block-no-ignored-properties": true,
+		"order/order": [
+			[
+				"custom-properties",
+				"dollar-variables",
+				{
+					"type": "at-rule",
+					"name": "extend"
+				},
+				{
+					"type": "at-rule",
+					"name": "include",
+					"hasBlock": false
+				},
+				"declarations",
+				{
+					"type": "rule",
+					"selector": "&::before"
+				},
+				{
+					"type": "rule",
+					"selector": "&::after"
+				},
+				"rules",
+				{
+					"type": "rule",
+					"selector": "&:link"
+				},
+				{
+					"type": "rule",
+					"selector": "&:visited"
+				},
+				{
+					"type": "rule",
+					"selector": "&:hover"
+				},
+				{
+					"type": "rule",
+					"selector": "&:focus"
+				},
+				{
+					"type": "rule",
+					"selector": "&:active"
+				},
+				{
+					"type": "rule",
+					"selector": "&:disabled"
+				},
+				{
+					"type": "rule",
+					"selector": "&:is"
+				},
+				{
+					"type": "rule",
+					"selector": "&:not"
+				},
+				{
+					"type": "rule",
+					"selector": "&:first-of-type"
+				},
+				{
+					"type": "rule",
+					"selector": "&:last-of-type"
+				},
+				{
+					"type": "rule",
+					"selector": "&:first-child"
+				},
+				{
+					"type": "rule",
+					"selector": "&:last-child"
+				},
+				{
+					"type": "rule",
+					"selector": "&:nth-child"
+				},
+				{
+					"type": "at-rule",
+					"name": "include",
+					"hasBlock": true
+				},
+				"at-rules"
+			]
+		]
+	}
+}

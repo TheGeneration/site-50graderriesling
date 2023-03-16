@@ -1,0 +1,25 @@
+@use '../01_settings/' as *;
+@use '../02_tools/' as *;
+
+.error404 {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	min-height: 100vh;
+	padding-top: size(80);
+
+	main {
+		.section {
+			width: 100%;
+			padding: max(20vh, #{$section-padding}) 0;
+
+			.col {
+				max-width: min(100%, #{size(500, 740)});
+			}
+		}
+	}
+
+	#footer {
+		margin-top: auto;
+	}
+}
