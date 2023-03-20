@@ -10,14 +10,20 @@
 
 		img {
 			display: inline-block;
-			width: 62.9%;
+			width: 90%;
+		}
+
+		@include bp-min(xl) {
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 
 		@include bp-max(md) {
 			margin: 0 size(-20, -160) size(20);
 
 			img {
-				width: 15.6%;
+				width: 40%;
 			}
 		}
 	}

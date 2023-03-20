@@ -5,7 +5,7 @@
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'bb5de46990f3a2d361cb28b06ee4616eb1461805',
+        'reference' => '97df55c7383b43661971855bded38f1cd2603534',
         'name' => 'thegeneration/generation-theme-child',
         'dev' => true,
     ),
@@ -52,7 +52,7 @@
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'bb5de46990f3a2d361cb28b06ee4616eb1461805',
+            'reference' => '97df55c7383b43661971855bded38f1cd2603534',
             'dev_requirement' => false,
         ),
         'wp-coding-standards/wpcs' => array(

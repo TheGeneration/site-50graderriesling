@@ -212,7 +212,7 @@ input {
 
 			> a {
 				font-weight: $link-l-tn-font-weight;
-				color: inherit;
+				color: var(--action-primary-main-default-color);
 
 				&:hover {
 					text-decoration: none;
