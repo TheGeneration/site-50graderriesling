@@ -41,7 +41,7 @@ class Scripts {
 	public function enqueue_frontend_scripts() {
 		// This file is empty by default
 		wp_enqueue_style( Theme::THEME_NAME, get_stylesheet_directory_uri() . '/assets/css/app.min.css', [], Theme::VERSION );
-		wp_enqueue_style( 'figtree-css', get_stylesheet_directory_uri() . '/assets/fonts/figtree/font.css', [], Theme::VERSION );
+		wp_enqueue_style( 'figtree-css', get_stylesheet_directory_uri() . '/assets/fonts/dm-sans/font.css', [], Theme::VERSION );
 
 		// This file is empty by default
 		wp_enqueue_script( Theme::THEME_NAME, get_stylesheet_directory_uri() . '/assets/js/app.min.js', [], Theme::VERSION, true );

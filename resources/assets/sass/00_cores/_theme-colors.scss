@@ -133,7 +133,7 @@ $theme-colors: (
 		// 'alias-background-negative-accent-hero-2-color': #{main.$alias-background-negative-accent-hero-2-color},
 		// 'alias-background-negative-accent-section-1-color': #{main.$alias-background-negative-accent-section-1-color},
 		// 'alias-background-negative-accent-section-2-color': #{main.$alias-background-negative-accent-section-2-color},
-		'box-shadow-dropdown-main-large': #{main.$box-shadow-dropdown-main-large},
+		// 'box-shadow-dropdown-main-large': #{main.$box-shadow-dropdown-main-large},,,
 	),
 	negative: (
 		'action-primary-main-default-color': #{negative.$action-primary-main-default-color},
@@ -266,6 +266,6 @@ $theme-colors: (
 		// 'alias-background-negative-accent-hero-2-color': #{negative.$alias-background-negative-accent-hero-2-color},
 		// 'alias-background-negative-accent-section-1-color': #{negative.$alias-background-negative-accent-section-1-color},
 		// 'alias-background-negative-accent-section-2-color': #{negative.$alias-background-negative-accent-section-2-color},
-		'box-shadow-dropdown-main-large': #{negative.$box-shadow-dropdown-main-large},
+		// 'box-shadow-dropdown-main-large': #{negative.$box-shadow-dropdown-main-large},,
 	),
 );
