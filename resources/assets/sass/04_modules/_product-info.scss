@@ -12,7 +12,7 @@
 		height: 100%;
 		padding: size(10);
 		font-size: fs($paragraph-sm-highlight-font-size);
-		font-weight: $paragraph-sm-highlight-font-weight;
+		font-weight: fs($paragraph-sm-highlight-font-weight);
 		color: var(--text-negative-level-1-color);
 		letter-spacing: $paragraph-sm-highlight-letter-spacing;
 		background: var(--background-negative-level-1-color);
