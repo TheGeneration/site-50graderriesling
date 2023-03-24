@@ -32,7 +32,7 @@ if ( ! class_exists( 'GTheme_Child\\Theme' ) ) :
 		 * @var string
 		 *
 		 */
-		const VERSION = '3.0.2';
+		const VERSION = '1.0.1';
 
 		/**
 		 * The single instance of the class.
